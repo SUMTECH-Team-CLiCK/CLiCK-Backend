@@ -12,3 +12,4 @@ class User(Base):
     # is_active = Column(Boolean, default=False)
 
     events = relationship("Event", back_populates="user")
+    histories = relationship("History", back_populates="user")

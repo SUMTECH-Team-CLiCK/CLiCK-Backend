@@ -1,4 +1,4 @@
 from .user import User
 from .event import Event
-
-__all__ = ["User", "Event"]
+from .history import History
+__all__ = ["User", "Event", "History"]
