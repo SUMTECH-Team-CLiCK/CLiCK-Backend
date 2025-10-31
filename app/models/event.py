@@ -8,7 +8,7 @@ class Event(Base):
     __tablename__ = "events"
 
     event_id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(String(36), ForeignKey("users.user_id"), nullable=False)
+    user_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
     input_prompt = Column(String(255), nullable=False)
     fixed_prompt = Column(String(255), nullable=False)
     reason = Column(String(255), nullable=False)

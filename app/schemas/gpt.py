@@ -1,9 +1,19 @@
-from typing import List, Tuple
 import re
 from pydantic import model_validator, BaseModel, constr, Field, ConfigDict, ValidationInfo
 from pydantic.types import conlist, UUID
+from typing import Optional
+
+class RoomTrace(BaseModel):
+    device_uuid: str
+    room_id: str
+    input_prompt: str
+
+class RecommendInput(BaseModel):
+    device_uuid: str
+    room_id: Optional[str]
+
 class inputPrompt(BaseModel):
-    user_id: UUID
+    device_uuid: str
     input_prompt: str
 
 class Patch(BaseModel):
