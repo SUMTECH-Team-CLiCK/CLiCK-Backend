@@ -7,6 +7,8 @@ from alembic import context
 from dotenv import load_dotenv
 import os
 
+from app.core.config import settings
+
 # .env 읽어오기
 load_dotenv()
 DB_HOST = os.environ.get("DB_HOST")
@@ -25,7 +27,7 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-config.set_main_option("sqlalchemy.url", DATABASE_URL)
+config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
 
 # add your model's MetaData object here
 # for 'autogenerate' support
